@@ -1,0 +1,273 @@
+body{
+    background-color: #191919;
+    font-family: "Inconsolata", sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 32px; 
+    color: #191919 ;
+}
+
+h1{
+    color: #EEEEEE;
+    margin-bottom: 64px;
+    font-size: 40px;
+    margin: 32px 0 64px 0;
+} 
+
+.container{
+    background-color: #EEEEEE;
+    width: 100%;
+    max-width: 900px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0 16px 16px 16px;
+    position: relative;
+}
+
+.tabs{
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #191919;
+}
+
+.tabs p{
+    padding: 16px;
+}
+
+.tabs p:hover{
+    color: rgb(200, 75, 49);
+    cursor: pointer;
+}
+
+.tabs p.active{
+    color: rgb(200, 75, 49);
+    position: relative;
+}
+
+.line{
+    height: 3px;
+    width: 100%;
+    top: 72px;
+    background-color: lightgray;
+    position: absolute;
+}
+
+.tabs .active::before{
+    content: "";
+    width: 200%;
+    height: 3px;
+    background-color: rgb(200, 75, 49);
+    position: absolute;
+    bottom: -10.5px;
+    z-index: 2;
+    left: -50%;
+    border-radius: 10px;
+}
+
+.toggle-wrapper{
+    display: flex;
+    margin-top: 32px;
+}
+
+.toggle-wrapper img{
+    height: 40px;
+    margin: 0 16px;
+}
+
+.toggle{
+    background-color: rgb(45, 66, 99);
+    width: 130px;
+    height: 32px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4px 0 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 12px;
+    box-sizing: border-box;
+}
+
+.toggle span:first-of-type{
+    color: #EEEEEE;
+}
+
+.toggle span:last-of-type{
+    color: rgb(45, 66, 99);
+    background-color: #EEEEEE;
+    padding: 4px 16px;
+    border-radius: 20px;
+}
+
+.session-card{
+    background-color: rgb(236, 219, 186);
+    text-align: center;
+    padding: 32px;
+    width: 50%;
+    text-transform: uppercase;
+    margin: 16px 0;
+    border-radius: 10px;
+}
+
+.session-card p{
+    color: #191919;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+.session-card .number{
+    color: rgb(200, 75, 49);
+    font-size: 54px;
+    margin: 0;
+}
+
+.description{
+    line-height: 32px;
+    margin: 16px 0 32px 0;
+    text-align: center;
+}
+
+.slider{
+    width: 100%;
+    position: relative;
+    margin-bottom: 32px;
+}
+
+.slider .bar{
+    width: 100%;
+    height: 16px;
+    background-color: rgb(238, 238, 238);
+    border: 1px solid lightgray;
+    border-radius: 20px;
+}
+
+.slider .progress{
+    width: 31%;
+    height: 18px;
+    background: linear-gradient(
+        90deg,
+        rgba(45, 45, 45, 1) 0%,
+        rgba(121, 36, 19, 1) 36%,
+        rgba(200, 75, 49, 1) 100%
+    );
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.15s transform ease;
+}
+
+.slider .point{
+    height: 24px;
+    width: 24px;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    left: 29%;
+    background-color: rgb(200, 75, 49);
+    border: 2px solid #EEEEEE;
+}
+
+.slider .point:hover{
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+.scale{
+    width: 100%;
+}
+
+.slider .scale ul{
+    list-style: none;
+    color: grey;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 5px;
+}
+
+.cards-wrapper{
+    display: flex;
+    flex-wrap:initial;
+}
+
+.card{
+    background-color: #EEEEEE;
+    border-radius: 12px;
+    padding: 16px 32px;
+    width: calc(50% - 32px);;
+    margin: 16px;
+    box-shadow: 0px 2px 8px 1px rgba(45, 45, 45, 0.1);
+    text-align: center;
+    font-weight: bold;
+    transition: 0.15s transform ease;
+    position: relative;
+    color: rgb(45, 66, 99);
+}
+
+.card:hover{
+    transform: translateY(-8px);
+}
+
+.card .top-section{
+    padding: 8px;
+}
+
+.card .top-section p{
+    margin: 4px 0;
+}
+
+.card .price{
+    font-size: 42px;
+    color: rgb(200, 75, 49);
+}
+
+.card hr{
+    width: 30%;
+    border: 1px solid lightgrey;
+    border-radius: 2px;
+}
+
+.card button{
+    border: none;
+    color: #191919;
+    background-color: rgb(236, 219, 186);
+    padding: 16px;
+    border-radius: 10px;
+    font-weight: bold;
+    margin: 12px;
+    transition: 0.15s transform ease;
+}
+
+.card button:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+}
+
+.card .save{
+    color: #EEEEEE;
+    background: linear-gradient(
+        90deg,
+        rgba(45, 45, 45, 1) 0%,
+        rgba(121, 36, 19, 1) 36%,
+        rgba(200, 75, 49, 1) 100%
+    );
+    width: 100%;
+    position: absolute;
+    top: -20px;
+    left: 0;
+    border-top-right-radius: 12px;
+    border-top-left-radius: 12px;
+}
